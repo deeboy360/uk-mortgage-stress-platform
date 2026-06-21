@@ -1,0 +1,36 @@
+# UK Mortgage Stress Platform — Python Dependencies
+# Tested on Python 3.10+
+# Install: pip install -r requirements.txt
+
+# Core data
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0     # Excel I/O
+xlrd>=2.0.1         # Legacy xls support
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.6   # PostgreSQL driver (binary wheels)
+
+# Time-series analysis
+statsmodels>=0.14.0       # STL decomposition
+
+# Geospatial
+geopandas>=0.14.0
+folium>=0.15.0
+
+# Visualisation
+plotly>=5.18.0
+matplotlib>=3.7.0
+scipy>=1.10.0
+
+# Dashboard
+dash>=2.16.0
+gunicorn>=21.2.0          # Production WSGI server (Render.com)
+
+# PDF generation
+reportlab>=4.0.0
+
+# Optional: for notebook exploration
+jupyter>=1.0.0
+ipython>=8.0.0

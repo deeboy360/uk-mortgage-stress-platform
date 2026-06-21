@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# Data (raw files are large; user downloads via download_data.sh)
+# Calibrated representative data IS committed for reproducibility
+# data/raw/*.csv is included (generated); real source files excluded by size:
+# data/raw/ashe_table8/       <- extracted ASHE ZIP (commit generated CSV instead)
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQLite dev DB (user creates locally; PostgreSQL is prod)
+*.db
+
+# Screenshots / temp
+*.png.tmp

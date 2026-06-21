@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Mortgage Stress & Housing Affordability Platform</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f6fa; color: #222; }
+    header { background: #1a2b4a; color: #fff; padding: 2.5rem 2rem 2rem; }
+    header h1 { font-size: 1.6rem; font-weight: 700; max-width: 800px; }
+    header p  { margin-top: 0.6rem; opacity: 0.8; font-size: 0.95rem; max-width: 700px; line-height: 1.5; }
+    .badge { display: inline-block; background: #f0c040; color: #1a2b4a; font-size: 0.75rem; font-weight: 700;
+             padding: 0.2rem 0.6rem; border-radius: 3px; margin-top: 0.8rem; }
+    main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .section-title { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; color: #888; text-transform: uppercase;
+                     margin: 2.5rem 0 1rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .card { background: #fff; border: 1px solid #e0e3ea; border-radius: 8px; padding: 1.2rem 1.4rem; text-decoration: none;
+            color: inherit; transition: box-shadow 0.15s, transform 0.15s; display: flex; flex-direction: column; gap: 0.5rem; }
+    .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.10); transform: translateY(-2px); }
+    .card .icon { font-size: 1.6rem; }
+    .card .title { font-weight: 700; font-size: 0.95rem; color: #1a2b4a; }
+    .card .desc { font-size: 0.82rem; color: #666; line-height: 1.45; }
+    .card .tag { font-size: 0.72rem; font-weight: 600; color: #fff; padding: 0.15rem 0.5rem; border-radius: 3px;
+                 display: inline-block; align-self: flex-start; margin-top: auto; }
+    .tag-map    { background: #2d7dd2; }
+    .tag-plot   { background: #44936a; }
+    .tag-pdf    { background: #c84b31; }
+    .tag-data   { background: #7c5cbf; }
+
+    .findings { background: #fff; border: 1px solid #e0e3ea; border-radius: 8px; padding: 1.4rem 1.6rem; }
+    .findings ul { list-style: disc; padding-left: 1.4rem; }
+    .findings li { margin: 0.5rem 0; font-size: 0.92rem; line-height: 1.55; color: #333; }
+    .findings strong { color: #1a2b4a; }
+
+    .img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .img-card { background: #fff; border: 1px solid #e0e3ea; border-radius: 8px; overflow: hidden; }
+    .img-card img { width: 100%; display: block; }
+    .img-card figcaption { padding: 0.6rem 1rem; font-size: 0.8rem; color: #666; }
+
+    .stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .pill { font-size: 0.78rem; background: #eef1f8; color: #3a4b6b; padding: 0.25rem 0.7rem; border-radius: 20px; }
+
+    footer { text-align: center; padding: 2.5rem 1rem; font-size: 0.8rem; color: #999; }
+    @media (max-width: 600px) { .img-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>UK Mortgage Stress &amp; Housing Affordability Intelligence Platform</h1>
+  <p>Quantifying the probability that a median-income first-time buyer enters negative equity across all 342 UK local authority districts, under four Bank of England interest rate scenarios.</p>
+  <span class="badge">Research Preview — Calibrated Representative Data</span>
+</header>
+
+<main>
+
+  <div class="section-title">Headline Findings</div>
+  <div class="findings">
+    <ul>
+      <li><strong>London leads on risk:</strong> Average PTI ratio above 12× at base rates; repayments consume 80–110% of gross monthly income for a median earner.</li>
+      <li><strong>+2% Bank Rate scenario:</strong> Negative equity probability rises to ~1.8% mean and up to <strong>5.4% in the highest-risk London boroughs</strong> within a 5-year horizon. North East England remains below 0.1%.</li>
+      <li><strong>Wales / Northern Ireland thin-equity risk:</strong> Low absolute prices mask thin equity buffers — NE probability exceeds 0.5% at +2%, above much of the South East.</li>
+    </ul>
+  </div>
+
+  <div class="section-title">Scenario Choropleth Maps</div>
+  <div class="cards">
+    <a class="card" href="choropleth_minus_1pct.html">
+      <span class="icon">🗺️</span>
+      <span class="title">−1% Bank Rate (2.75%)</span>
+      <span class="desc">NE probability across all 342 LADs with rates 100bps below base.</span>
+      <span class="tag tag-map">Interactive Map</span>
+    </a>
+    <a class="card" href="choropleth_base.html">
+      <span class="icon">🗺️</span>
+      <span class="title">Base (3.75%)</span>
+      <span class="desc">Baseline NE probability at current Bank Rate.</span>
+      <span class="tag tag-map">Interactive Map</span>
+    </a>
+    <a class="card" href="choropleth_plus_1pct.html">
+      <span class="icon">🗺️</span>
+      <span class="title">+1% Bank Rate (4.75%)</span>
+      <span class="desc">Stress scenario: rates 100bps above base.</span>
+      <span class="tag tag-map">Interactive Map</span>
+    </a>
+    <a class="card" href="choropleth_plus_2pct.html">
+      <span class="icon">🗺️</span>
+      <span class="title">+2% Bank Rate (5.75%)</span>
+      <span class="desc">Severe stress: rates 200bps above base — equivalent to 2023 peak.</span>
+      <span class="tag tag-map">Interactive Map</span>
+    </a>
+  </div>
+
+  <div class="section-title">Analysis Outputs</div>
+  <div class="cards">
+    <a class="card" href="executive_briefing.pdf">
+      <span class="icon">📄</span>
+      <span class="title">Executive Briefing PDF</span>
+      <span class="desc">1-page senior stakeholder summary with headline findings, top-10 risk LADs, and policy recommendations.</span>
+      <span class="tag tag-pdf">PDF</span>
+    </a>
+    <a class="card" href="stl_decomposition_plots.png">
+      <span class="icon">📈</span>
+      <span class="title">STL Decomposition Plots</span>
+      <span class="desc">Seasonal-trend decomposition across 8 representative local authorities — calibrates the Monte Carlo drift and volatility parameters.</span>
+      <span class="tag tag-plot">Chart</span>
+    </a>
+    <a class="card" href="monte_carlo_validation.png">
+      <span class="icon">🎲</span>
+      <span class="title">Monte Carlo Validation</span>
+      <span class="desc">Southwark fan chart and final-month histogram (skewness = +0.37 ✓) confirming log-normal price path structure.</span>
+      <span class="tag tag-plot">Chart</span>
+    </a>
+    <a class="card" href="https://uk-mortgage-stress.onrender.com">
+      <span class="icon">📊</span>
+      <span class="title">Live Dash App</span>
+      <span class="desc">Full interactive dashboard on Render.com — scenario dropdown + click-through LAD detail panel. May take ~30s to wake.</span>
+      <span class="tag tag-map">External ↗</span>
+    </a>
+  </div>
+
+  <div class="section-title">Analysis Plots</div>
+  <div class="img-grid">
+    <figure class="img-card">
+      <img src="stl_decomposition_plots.png" alt="STL Decomposition Plots">
+      <figcaption>STL decomposition — 8 representative local authorities (observed, trend, seasonal, residual)</figcaption>
+    </figure>
+    <figure class="img-card">
+      <img src="monte_carlo_validation.png" alt="Monte Carlo Validation">
+      <figcaption>Southwark Monte Carlo: 10,000 price paths + final-month distribution (right-skewed ✓)</figcaption>
+    </figure>
+  </div>
+
+  <div class="section-title">Tech Stack</div>
+  <div class="stack">
+    <span class="pill">Python 3.10+</span>
+    <span class="pill">pandas</span>
+    <span class="pill">numpy</span>
+    <span class="pill">statsmodels STL</span>
+    <span class="pill">scipy</span>
+    <span class="pill">PostgreSQL 14</span>
+    <span class="pill">SQLAlchemy</span>
+    <span class="pill">geopandas</span>
+    <span class="pill">folium</span>
+    <span class="pill">plotly</span>
+    <span class="pill">Plotly Dash</span>
+    <span class="pill">matplotlib</span>
+    <span class="pill">reportlab</span>
+    <span class="pill">Render.com</span>
+    <span class="pill">GitHub Pages</span>
+  </div>
+
+  <div class="section-title">Methodology Summary</div>
+  <div class="findings">
+    <ul>
+      <li><strong>Monte Carlo engine:</strong> 10,000 paths × 60 months, Geometric Brownian Motion — <em>P<sub>t</sub> = P<sub>t−1</sub> × exp(r<sub>t</sub>)</em>, <em>r<sub>t</sub> ~ N(μ, σ²)</em>. Drift and volatility calibrated per region from STL residuals.</li>
+      <li><strong>Affordability persona:</strong> 90% LTV (FCA FTB mode band), 25-year capital repayment, ONS ASHE Table 8 regional median earnings.</li>
+      <li><strong>Rate pass-through:</strong> OLS on BoE 90% LTV series 2009–2024 → <em>MortgageRate = 1.70 + 0.85 × BankRate</em>. Not 1:1.</li>
+      <li><strong>Rate–price sensitivity:</strong> −0.08% house price drift per month per 1pp Bank Rate change — calibrated to 2022–23 tightening (+5pp → −5% over 18 months).</li>
+      <li><strong>Limitation:</strong> Normal returns underestimate crash tail risk (2008 London: −17% vs model 5th pctl −2%). Future work: jump-diffusion or GARCH models.</li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  Data sources: HM Land Registry UK HPI · ONS ASHE Table 8 · Bank of England IADB · FCA Mortgage Lending Statistics · ONS Open Geography Portal &nbsp;|&nbsp; Open Government Licence v3.0
+</footer>
+
+</body>
+</html>

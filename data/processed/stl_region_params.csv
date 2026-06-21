@@ -1,0 +1,9 @@
+lad_code,label,monthly_drift,residual_monthly_vol,annual_drift_pct,annual_vol_pct,price_jun2024,n_months
+E09000028,Southwark (Inner London),0.004728,0.015241,5.82,5.28,747754.0,174
+E08000035,Leeds (Northern city),0.002885,0.007262,3.52,2.52,196005.0,174
+E08000003,Manchester (Northern city 2),0.003168,0.007657,3.87,2.65,206527.0,174
+E07000079,Cotswold (Rural SW),0.003711,0.007293,4.55,2.53,364276.0,174
+E07000209,Guildford (Commuter belt),0.004185,0.006709,5.14,2.32,531347.0,174
+E06000052,Cornwall (Rural),0.003307,0.011087,4.04,3.84,303653.0,174
+W06000015,Cardiff (Wales capital),0.0023,0.008545,2.8,2.96,206598.0,174
+S12000036,Edinburgh (Scotland capital),0.00288,0.009829,3.51,3.4,215434.0,174
