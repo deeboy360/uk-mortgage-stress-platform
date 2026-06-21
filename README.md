@@ -8,7 +8,7 @@
 
 | Link | Description |
 |------|-------------|
-| 🗺️ **[Static Choropleth Maps](./docs/index.html)** | GitHub Pages — four scenario maps, STL plots, executive briefing PDF |
+| 🗺️ **[Static Choropleth Maps](https://deeboy360.github.io/uk-mortgage-stress-platform/)** | GitHub Pages — four scenario maps, STL plots, executive briefing PDF |
 | 📊 **[Live Interactive Dashboard](https://uk-mortgage-stress.onrender.com)** | Render.com — Plotly Dash app with click-through regional detail |
 
 > **Note:** The Render free-tier app spins down after 15 minutes of inactivity; allow ~30 seconds on first load.
